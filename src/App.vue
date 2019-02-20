@@ -23,12 +23,10 @@
     text-align: center;
     text-decoration-color: aliceblue;
     color: #2c3e50;
-    margin-top: 60px;
-    margin-bottom: 60px;
     bottom: 0;
     background-color: #34495e;
     left: 0;
-    position: relative;
+    position: absolute;
     right: 0;
     top:0;
   }
