@@ -23,7 +23,8 @@ npm run build --report
 
 ## Easy deployment
 ``` Deployment
-Build your vue code using npm run build command. This will create a folder dist which should have index.html file and static folder.
+Build your vue code using npm run build command. 
+This will create a folder dist which should have index.html file and static folder.
 Copy dist folder into your server code repository.
 
 These 2 lines make sure that vue and express app are coming from the same server. 
