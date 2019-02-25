@@ -1,20 +1,13 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 require('./assets/css/main.css');
+require('./assets/css/flipclock.css')
+
 
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
-<<<<<<< HEAD
-Vue.use(VueRouter)
 
-import Hello from './components/HelloWorld'
-
-import About from './components/About'  
-
-
-
-=======
 import Home from '@/components/Home'
 import NavBar from '@/components/NavBar'
 import PageOne from '@/components/PageOne'
@@ -25,7 +18,6 @@ import PageFive from '@/components/PageFive'
 import PageSix from '@/components/PageSix'
 Vue.use(VueRouter)
 
->>>>>>> 9fb852979e4d4404a75395765dcf7819bf202e73
 const routes = [
 // define the root url of the application.
   { path: '/', component: Home },

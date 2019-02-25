@@ -8,6 +8,8 @@
                      v-bind:key="routes.id"
                      :to="`${routes.page}`">{{routes.text}}</router-link>
     </nav>
+
+    <div class = "clockboy"></div>
   </div>
 </template>
 
