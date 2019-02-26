@@ -1,5 +1,5 @@
 <template>
-  <div id="about">
+  <div id="home">
     PAGE HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME ONE <br>
     PAGE HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME ONE <br>
     PAGE HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME ONE <br>
@@ -13,13 +13,15 @@ export default {
 </script>
 <!-- styling for the component -->
 <style>
-#about {
+#home {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: aliceblue;
-  margin-top: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #2d8cf0;
 }
 </style>
 
