@@ -19,10 +19,13 @@ module.exports = {
         changeOrigin: true
       },
 
-      'exampleApi2': {
+      '/api2': {
         target: 'http://localhost:8001',
-        changeOrigin: true
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api2': '/api2'
       }
+    }
 
     },
 

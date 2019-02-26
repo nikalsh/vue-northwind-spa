@@ -1,7 +1,7 @@
 <template>
   <div>
   <div id="what">
-    <h2>NORTHWIND MYSQL FRONTEND</h2>
+    <h2>NORTHWIND VUE.JS FRONTEND</h2>
   </div>
     <nav>
         <router-link tag="button" v-for="routes in links"
@@ -67,6 +67,8 @@ export default {
     padding: 0;
     margin-bottom: 30px;
     position: page;
+    background: url("../assets/logo.png");
+
   }
   .el-button {
     font-size: 44px;

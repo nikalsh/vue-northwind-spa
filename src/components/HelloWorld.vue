@@ -32,7 +32,6 @@ export default {
 
     margin: 0 auto;
     grid-gap: 10px;
-
 }
 
 #one{
