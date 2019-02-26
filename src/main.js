@@ -3,7 +3,8 @@
 var cors = require('cors')
 require('./assets/css/main.css');
 require('./assets/css/flipclock.css')
-
+import vueButtonEffect from 'vue-button-effect'
+Vue.use(vueButtonEffect)
 
 import Vue from 'vue'
 import App from './App'

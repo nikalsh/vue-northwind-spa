@@ -1,11 +1,11 @@
 <template>
   <div id="about">
-<div v-if="posts && posts.length" ta>
+<div v-if="posts && posts.length">
   <div v-for="post of posts">
-      <v-btn>{{post.CategoryID}}</v-btn>
-      <v-btn>{{post.CategoryName}}</v-btn>
-      <v-btn>{{post.Description}}</v-btn>
-      <v-btn>{{post.Picture}}</v-btn><br>
+      <g-button-wayra>{{post.CategoryID}},{{post.CategoryName}},{{post.Description}},{{post.Picture}}</g-button-wayra>
+      <!--<v-btn>{{post.CategoryName}}</v-btn>-->
+      <!--<v-btn>{{post.Description}}</v-btn>-->
+      <!--<v-btn>{{post.Picture}}</v-btn><br>-->
   </div>
 </div>
 
@@ -39,7 +39,7 @@
 
 </script>
 
-<style>
+<style scoped>
   #about {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
