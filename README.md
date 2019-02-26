@@ -24,7 +24,8 @@ npm run build --report
 In our case we're building a RESTful API with Express.  
 Locally this poses a problem, since we'd want to simulate the production
 strucutre as closely as possible while still having the beneift of utilizing
-the incredible webpack dev server. Two servers running locally at different ports
+the incredible webpack dev server. 
+Two servers running locally at different ports
 will make the browser go crazy and prevent API calls to due to CORS. 
 Instead of messing with source code in the server app, the best
 solution is to set up a proxyTable in vue directly.
