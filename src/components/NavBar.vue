@@ -1,7 +1,7 @@
 <template>
   <div>
   <div id="what">
-    <h2>NORTHWIND VUE.JS FRONTEND</h2>
+    <h2>NORTHWIND SPA</h2>
   </div>
     <nav>
         <router-link tag="button" v-for="routes in links"
@@ -9,7 +9,6 @@
                      :to="`${routes.page}`">{{routes.text}}</router-link>
     </nav>
 
-    <div class = "clockboy"></div>
   </div>
 </template>
 

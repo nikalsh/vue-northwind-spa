@@ -1,8 +1,8 @@
 <template>
   <div id="about">
-    PAGE PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX ONE <br>
-    PAGE PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX ONE <br>
-    PAGE PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX PAGESIX ONE <br>
+    <img src = "../assets/logo.png" alt="vuelogo" height="100" style="padding: 25px; border:"><img>
+    <img src = "../assets/node.svg" height="100" alt="nodelogo" style="padding: 25px; border:"><img>
+    <img src = "../assets/mysql.png" alt="mysqllogo" height="100"  style="padding: 0px 25px 50px 25px;"><img>
   </div>
 </template>
 
