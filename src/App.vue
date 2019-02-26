@@ -10,7 +10,7 @@
   export default {
     name: 'app',
     components: {
-      'NavBar': NavBar
+      'NavBar': NavBar,
     }
   }
 </script>

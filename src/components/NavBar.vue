@@ -1,15 +1,22 @@
 <template>
+
   <div>
   <div id="what">
     <h2>NORTHWIND MYSQL FRONTEND</h2>
   </div>
+    <div>
     <nav>
-        <router-link tag="button" v-for="routes in links"
+      <v-btn-toggle>
+        <router-link v-for="routes in links"
                      v-bind:key="routes.id"
-                     :to="`${routes.page}`">{{routes.text}}</router-link>
+                     :to="`${routes.page}`"><button :class="[$style.button, $style.buttonClose]">{{routes.text}}</button></router-link>
+      </v-btn-toggle>
     </nav>
+    </div>
   </div>
 </template>
+
+
 
 <script>
 export default {
@@ -24,7 +31,7 @@ export default {
         },
         {
           id: 1,
-          text: 'PageOne',
+          text: 'Customer list',
           page: '/PageOne'
         },
         {
@@ -65,8 +72,20 @@ export default {
     padding: 0;
     margin-bottom: 30px;
     position: page;
+    margin-outside: 10;
   }
-  .el-button {
-    font-size: 44px;
+  button {
+
+  }
+</style>
+
+<style module>
+  .button {
+    border: none;
+    border-radius: 2px;
+  }
+
+  .buttonClose {
+    background-color: red;
   }
 </style>

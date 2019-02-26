@@ -1,14 +1,17 @@
 <template>
   <div id="about">
-    PAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONE <br>
-    PAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONE <br>
-    PAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONE <br>
+    <customers-list></customers-list>
   </div>
+
 </template>
 
 <script>
-export default {
-  name: 'pageOne'
+  import CustomersList from '@/components/CustomersList'
+  export default {
+  name: 'pageOne',
+  components: {
+    CustomersList
+  }
 }
 </script>
 <!-- styling for the component -->
