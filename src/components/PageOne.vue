@@ -1,18 +1,18 @@
 <template>
   <div id="about">
-    <customers-list></customers-list>
+    <list-categories></list-categories>
   </div>
 
 </template>
 
 <script>
-  import CustomersList from '@/components/CustomersList'
+  import ListCategories from "./ListCategories";
   export default {
-  name: 'pageOne',
-  components: {
-    CustomersList
+    name: 'pageOne',
+    components: {
+      'ListCategories': ListCategories,
+    }
   }
-}
 </script>
 <!-- styling for the component -->
 <style>

@@ -1,6 +1,10 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
+var cors = require('cors')
+require('./assets/css/main.css');
+require('./assets/css/flipclock.css')
+
+
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
@@ -13,19 +17,6 @@ import PageFour from '@/components/PageFour'
 import PageFive from '@/components/PageFive'
 import PageSix from '@/components/PageSix'
 Vue.use(VueRouter)
-Vue.use(Vuetify)
-import 'vuetify/dist/vuetify.min.css';
-import Vuetify from "vuetify";
-import colors from 'vuetify/es5/util/colors';
-
-Vue.use(Vuetify, {
-  theme: {
-    primary: colors.indigo.base,
-    info: colors.blue.lighten2,
-    accent: colors.green.lighten1,
-    error: colors.red.darken2
-  }
-});
 
 const routes = [
 // define the root url of the application.
@@ -58,4 +49,3 @@ new Vue({
   //pass in the router to the Vue instance
   router
 }).$mount('#app')//mount the router on the app
-
