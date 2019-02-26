@@ -8,7 +8,7 @@ import PageTwo from '@/components/PageTwo'
 import PageThree from '@/components/PageThree'
 import PageFour from '@/components/PageFour'
 import PageFive from '@/components/PageFive'
-import PageSix from '@/components/PageSix'
+import About from '@/components/About'
 
 Vue.use(Router)
 export default new Router({
@@ -45,8 +45,8 @@ export default new Router({
     },
     {
       path: '/components',
-      name: 'PageSix',
-      component: PageSix
+      name: 'About',
+      component: About
     }
   ]
 })

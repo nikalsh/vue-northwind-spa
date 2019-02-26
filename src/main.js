@@ -16,7 +16,7 @@ import PageTwo from '@/components/PageTwo'
 import PageThree from '@/components/PageThree'
 import PageFour from '@/components/PageFour'
 import PageFive from '@/components/PageFive'
-import PageSix from '@/components/PageSix'
+import About from '@/components/About'
 Vue.use(VueRouter)
 
 const routes = [
@@ -29,7 +29,7 @@ const routes = [
   { path: '/PageThree', component: PageThree },
   { path: '/PageFour', component: PageFour },
   { path: '/PageFive', component: PageFive },
-  { path: '/PageSix', component: PageSix }
+  { path: '/About', component: About }
 ]
 
 // Create the router instance and pass the `routes` option
