@@ -8,6 +8,9 @@
     <img src = "../assets/mysql.png" alt="mysqllogo" height="100"  
     style="padding: 25px 25px 25px 25px;"><img>
     
+    <br><br>
+
+   
   </div>
 </template>
 

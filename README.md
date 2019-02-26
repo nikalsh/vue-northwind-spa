@@ -1,6 +1,6 @@
 # northwind-spa
 
-- A Vue.js project
+- A Vue.js frontend
 
 ## Build Setup
 
@@ -27,7 +27,7 @@ strucutre as closely as possible while still having the beneift of utilizing
 the incredible webpack dev server. 
 
 Two servers running locally at different ports
-will make the browser go crazy and prevent API calls to due to CORS. 
+will make the browser go crazy and prevent API calls due to CORS. 
 Instead of messing with source code in the server app, the best
 solution is to set up a proxyTable in vue directly.
 
@@ -39,10 +39,10 @@ proxyTable: {
       changeOrigin: true
       },
 ```
-Add as many URLs as nessecary
+Add as many endpoints as nessecary
 
 ## Deploying Vue.js + Express
-Build your vue code using npm run build command. 
+Build your vue code using npm run build.
 This will create a folder dist which should have index.html file and static folder.
 Copy dist folder into your server code repository.
 
