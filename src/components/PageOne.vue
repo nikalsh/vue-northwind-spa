@@ -1,15 +1,18 @@
 <template>
   <div id="about">
-    PAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONE <br>
-    PAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONE <br>
-    PAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONEPAGE ONE <br>
+    <list-categories></list-categories>
   </div>
+
 </template>
 
 <script>
-export default {
-  name: 'pageOne'
-}
+  import ListCategories from "./ListCategories";
+  export default {
+    name: 'pageOne',
+    components: {
+      'ListCategories': ListCategories,
+    }
+  }
 </script>
 <!-- styling for the component -->
 <style>
