@@ -7,11 +7,11 @@
     </div>
     <nav>
       <router-link
-        tag="button"
+        tag="router-button"
         v-for="routes in links"
         v-bind:key="routes.id"
         :to="`${routes.page}`"
-      ><button>{{routes.text}}</button></router-link>
+      ><g-button-nuka color = "primary">{{routes.text}}</g-button-nuka></router-link>
     </nav>
   </div>
 </template>
@@ -64,7 +64,9 @@ export default {
 </script>
 <style>
 
-
+button {
+  
+}
 #what {
   color: aliceblue;
   font-size: 76px;

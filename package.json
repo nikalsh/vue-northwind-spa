@@ -13,6 +13,7 @@
     "axios": "^0.18.0",
     "cors": "^2.8.5",
     "vue": "^2.5.2",
+    "vue-button-effect": "0.0.3",
     "vue-router": "^3.0.2",
     "vuetify": "^1.5.2"
   },

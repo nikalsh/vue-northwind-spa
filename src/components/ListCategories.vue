@@ -1,8 +1,9 @@
 <template>
   <div id="about">
+
     <div v-if="posts && posts.length">
-      <div v-for="post of posts">
-        <g-button-wayra>{{post.CategoryID}},{{post.CategoryName}},{{post.Description}},{{post.Picture}}</g-button-wayra>
+      <div v-for="post of posts" v-bind:key="post.id">
+          <g-button-nuka color = "light-primary" size="button--size-s">{{post.CategoryID}},{{post.CategoryName}},{{post.Description}},{{post.Picture}}</g-button-nuka>
         <!--<v-btn>{{post.CategoryName}}</v-btn>-->
         <!--<v-btn>{{post.Description}}</v-btn>-->
         <!--<v-btn>{{post.Picture}}</v-btn>
@@ -11,7 +12,7 @@
     </div>
 
     <ul v-else-if="errors && errors.length">
-      <li v-for="error of errors">{{error.message}}</li>
+      <li v-for="error of errors" v-bind:key="error.id">{{error.message}}</li>
     </ul>
   </div>
 </template>
@@ -38,7 +39,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+
+button{
+}
+
+
 #about {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

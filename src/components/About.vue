@@ -1,15 +1,17 @@
 <template>
   <div id="about">
     <div>Powered By:</div>
+    <br>
+    <div id = "images">
     <img src = "../assets/logo.png" alt="vuelogo" height="100"
-    style="padding: 0px 50px 0px 50px; "><img>
+    style=" padding: 15px">
     <img src = "../assets/node.svg" height="100" alt="nodelogo"
-    st  yle="padding: 25px; "><img>
+    st  yle="padding-top: 25px  ">
     <img src = "../assets/mysql.png" alt="mysqllogo" height="100"
-    style="padding: 25px 25px 25px 25px;"><img>
+    style="padding-bottom: 15px">
     <img src = "../assets/2000px-Microsoft_Azure_Logo.svg.png" alt="myazurelogo" height="100"
-    style="padding: 25px 25px 25px 25px;"><img>
-
+    style="padding: 25px 0px">
+    </div>
   </div>
 </template>
 
@@ -29,6 +31,11 @@ export default {
   margin-top: 60px;
 
 
+}
+
+img {
+  border: 1px solid black;
+  padding: 5px;
 }
 
 img:hover {
