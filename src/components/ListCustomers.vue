@@ -1,57 +1,44 @@
 <template>
   <div id="about">
-
-    <div id="customerList">
-
-      <!--<div id="app">-->
-        <!--<span>{{ price | toUSD }}</span>-->
-      <!--</div>-->
-
-      <!--<div v-if="posts && posts.length">-->
-      <!--<div v-for="post of posts" v-bind:key="post.id">-->
-      <!--<g-button-nuka color = "light-primary" size="button--size-s">{{post.CategoryID}},{{post.CategoryName}},{{post.Description}},{{post.Picture}}</g-button-nuka>-->
-      <!--<v-btn>{{post.CategoryName}}</v-btn>-->
-      <!--<v-btn>{{post.Description}}</v-btn>-->
-      <!--<v-btn>{{post.Picture}}</v-btn>
-      <br>-->
-      <!--<g-button-nuka color = "light-primary" size="button&#45;&#45;size-s">{{post.CategoryID}},{{post.CategoryName}},{{post.Description}},{{post.Picture}}</g-button-nuka>-->
-
-      <div v-for="post in posts" v-bind:key="posts.customerid">
-
-
-        <span> {{ post | toUSD }} </span>
-
-
-      <!--<div class="row"> {{ reversedMessage }} </div>-->
-      <!--<div class="row"> {{ posts }} </div>-->
-<!--{{ this.posts }}-->
-<!--{{ reversedMessage }}-->
-
-    </div>
-    </div>
+    <div v-if="posts && posts.length">
+      <div
+        v-for="post of posts"
+        :key="post.id"
+      >
+        {{ post.CompanyName }}
+      </div>
     </div>
 
-    <!--<div v-if="posts && posts.length">-->
-      <!--<div v-for="post of posts" v-bind:key="post.id">-->
-          <!--<g-button-nuka color = "light-primary" size="button&#45;&#45;size-s">{{post.CategoryID}},{{post.CategoryName}},{{post.Description}},{{post.Picture}}</g-button-nuka>-->
-        <!--<v-btn>{{post.CategoryName}}</v-btn>-->
-        <!--<v-btn>{{post.Description}}</v-btn>-->
-        <!--<v-btn>{{post.Picture}}</v-btn>
-        <br>-->
-
-    <!--<ul v-else-if="errors && errors.length">-->
-      <!--<li v-for="error of errors" v-bind:key="error.id">{{error.message}}</li>-->
-    <!--</ul>-->
+    <ul v-else-if="errors && errors.length">
+      <li
+        v-for="error of errors"
+        :key="error.id"
+      >
+        {{ error.message }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
-
 import axios from "axios";
 export default {
-  name: "customerList",
+  name: "CustomerList",
   data() {
     return {
-      posts: [],
+      posts: {
+        CustomerID: '',
+        CompanyName: '',
+        ContactName: '',
+        ContactTitle: '',
+        Address: '',
+        City: '',
+        Region: '',
+        PostalCode: '',
+        Country: '',
+        Phone: '',
+        Fax: ''
+      },
       errors: []
     };
   },
@@ -64,7 +51,7 @@ export default {
       .catch(e => {
         this.errors.push(e);
       });
-  },
+  }
 };
 </script>
 

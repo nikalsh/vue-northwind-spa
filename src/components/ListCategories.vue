@@ -1,11 +1,16 @@
 <template>
   <div id="about">
     <div v-if="posts && posts.length">
-      <div v-for="post of posts" v-bind:key="post.id">
+      <div
+        v-for="post of posts"
+        :key="post.id"
+      >
         <g-button-nuka
           color="light-primary"
           size="button--size-s"
-        >{{post.CategoryID}},{{post.CategoryName}},{{post.Description}}</g-button-nuka>
+        >
+          {{ post.CategoryID }},{{ post.CategoryName }},{{ post.Description }}
+        </g-button-nuka>
 
         <!-- <img id="pic" :src= "data:image/png;base64, " + {{post.Picture}} alt = "pic"> -->
         <!--<v-btn>{{post.CategoryName}}</v-btn>-->
@@ -16,7 +21,12 @@
     </div>
 
     <ul v-else-if="errors && errors.length">
-      <li v-for="error of errors" v-bind:key="error.id">{{error.message}}</li>
+      <li
+        v-for="error of errors"
+        :key="error.id"
+      >
+        {{ error.message }}
+      </li>
     </ul>
   </div>
 </template>
@@ -32,7 +42,7 @@ export default {
   },
   async created() {
     axios
-      .get("api/categories", { params: { table: "Category" } })
+      .get("api/cat", { params: { table: "Category" } })
       .then(response => {
         this.posts = response.data;
       })
