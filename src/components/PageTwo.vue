@@ -1,5 +1,6 @@
 <template>
   <div id="pageTwo">
+    <list-customers></list-customers>
     PAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE ONE <br>
     PAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE ONE <br>
     PAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE ONE <br>
@@ -7,9 +8,13 @@
 </template>
 
 <script>
-export default {
-  name: 'pageTwo'
-}
+  import ListCustomers from "./ListCustomers";
+  export default {
+    name: 'pageTwo',
+    components: {
+      'ListCustomers': ListCustomers,
+    }
+  }
 </script>
 <!-- styling for the component -->
 <style>
