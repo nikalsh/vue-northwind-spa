@@ -1,16 +1,14 @@
 <template>
-  <div id="pageTwo">
+  <div id="customers">
     <list-customers></list-customers>
-    PAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE ONE <br>
-    PAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE ONE <br>
-    PAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE ONE <br>
+
   </div>
 </template>
 
 <script>
   import ListCustomers from "./ListCustomers";
   export default {
-    name: 'pageTwo',
+    name: 'customers',
     components: {
       'ListCustomers': ListCustomers,
     }
@@ -18,7 +16,7 @@
 </script>
 <!-- styling for the component -->
 <style>
-#pageTwo {
+#shippers {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div id="shippers">
     PAGE HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME ONE <br>
     PAGE HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME ONE <br>
     PAGE HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME ONE <br>
@@ -8,12 +8,12 @@
 
 <script>
 export default {
-  name: 'home'
+  name: 'shippers'
 }
 </script>
 <!-- styling for the component -->
 <style>
-#home {
+#customers {
  
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

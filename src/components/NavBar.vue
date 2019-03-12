@@ -32,18 +32,18 @@ export default {
       links: [
         {
           id: 0,
-          text: "Home",
-          page: "/Home"
+          text: "Customers",
+          page: "/Customers"
         },
         {
           id: 1,
-          text: "PageOne",
-          page: "/PageOne"
+          text: "Products",
+          page: "/Products"
         },
         {
           id: 2,
-          text: "PageTwo",
-          page: "/PageTwo"
+          text: "Shippers",
+          page: "/Shippers"
         },
         {
           id: 3,
@@ -116,7 +116,7 @@ h2 {
   margin: 0;
   padding: 0;
   background: url("../assets/logo.png") repeat-x;
-  height: 185px;
+  height: 150px;
   width: 3000px;
   animation: slide 7s linear infinite;
   z-index: -100;
