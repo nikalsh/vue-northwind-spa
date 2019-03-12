@@ -1,20 +1,22 @@
 <template>
   <div id="customers">
-    PAGE HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME ONE <br>
-    PAGE HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME ONE <br>
-    PAGE HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME ONE <br>
+    <list-customers></list-customers>
+
   </div>
 </template>
 
 <script>
-export default {
-  name: 'customers'
-}
+  import ListCustomers from "./ListCustomers";
+  export default {
+    name: 'customers',
+    components: {
+      'ListCustomers': ListCustomers,
+    }
+  }
 </script>
 <!-- styling for the component -->
 <style>
-#customers {
- 
+#shippers {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -22,13 +24,7 @@ export default {
   color: aliceblue;
   padding-top: 60px;
   padding-bottom: 60px;
-  border: 5px solid #2d8cf0;
-  /* background-color: #2d8cf0; */
+  background-color: #2d8cf0;
+  /* border: 1px solid black; */
 }
 </style>
-
-<!--Applikationen  skall göras som en SPA applikation där endast data hämtas från backend( databasen)-->
-<!--Föreställ er att ni är ordermottagare på Deligrossisten 'Northwind enterprises' och kunder ringer till företaget och beställer varor från er. Kunderna är detaljister dvs mindre affärer som också säljer deliprodukter.-->
-<!--Ni skall alltså hantera hela beställningsprocessen i applikationen där slutprodukten är en komplett beställning-->
-<!--Ni kommer att få en scriptfil som genererar databasen och dess tabeller till er lokala sql server.-->
-<!--Ni kan redan nu studera databasens schema här-->
