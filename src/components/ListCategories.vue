@@ -2,11 +2,16 @@
   <div id="about">
     <div v-if="posts && posts.length">
       <div v-for="post of posts" v-bind:key="post.id">
-        <g-button-nuka
+        
+        
+        <!-- <g-button-nuka
           color="light-primary"
           size="button--size-s"
-        >{{post.CategoryID}},{{post.CategoryName}},{{post.Description}}</g-button-nuka>
-
+        ></g-button-nuka>-->
+        
+        
+        {{post.CategoryID}},{{post.CategoryName}},{{post.Description}},{{post.Picture}}
+        
         <!-- <img id="pic" :src= "data:image/png;base64, " + {{post.Picture}} alt = "pic"> -->
         <!--<v-btn>{{post.CategoryName}}</v-btn>-->
         <!--<v-btn>{{post.Description}}</v-btn>-->
@@ -23,6 +28,8 @@
 
 <script>
 import axios from "axios";
+
+
 export default {
   data() {
     return {
