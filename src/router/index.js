@@ -1,4 +1,3 @@
-// import HelloWorld from '@/components/HelloWorld'
 Vue.use(Router)
 import Vue from 'vue'
 import Router from 'vue-router'

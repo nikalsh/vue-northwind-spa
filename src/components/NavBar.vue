@@ -3,22 +3,30 @@
     <div class="sliding-background"></div>
 
     <div id="what">
-      <h2>NORTHWIND SPA</h2>
+
+      <div id = "title">NORTHWIND</div>
+
     </div>
+
+    <OrderForm></OrderForm>
     <nav>
       <router-link
         tag="router-button"
         v-for="routes in links"
         v-bind:key="routes.id"
         :to="`${routes.page}`"
-      ><g-button-nuka color = "primary">{{routes.text}}</g-button-nuka></router-link>
+      >
+        <g-button-nuka color="primary" size="button--size-m">{{routes.text}}</g-button-nuka>
+      </router-link>
     </nav>
   </div>
 </template>
 
 <script>
+import OrderForm from "./OrderForm";
 export default {
   name: "NavBar",
+ 
   data() {
     return {
       links: [
@@ -59,16 +67,31 @@ export default {
         }
       ]
     };
-  }
+
+  
+  },
+
+components: {
+OrderForm: OrderForm
+}
+
 };
 </script>
 <style>
-
 button {
-  
 }
 #what {
   color: aliceblue;
+  font-size: 76px;
+  /* position: absolute; */
+  width: 100%;
+  height: 50%;
+
+  top: -15px;
+  left: 0;
+}
+#title{
+ color: aliceblue;
   font-size: 76px;
   position: absolute;
   width: 100%;
@@ -76,27 +99,27 @@ button {
 
   top: -15px;
   left: 0;
-
 }
-
 nav {
   margin-top: 35px;
 }
 .container {
+  margin: 0;
+  padding: 0;
   overflow: hidden;
   position: relative;
-
 }
 
 h2 {
-
 }
 .sliding-background {
+  margin: 0;
+  padding: 0;
   background: url("../assets/logo.png") repeat-x;
   height: 185px;
   width: 3000px;
   animation: slide 7s linear infinite;
-  z-index: 0;
+  z-index: -100;
 }
 
 @keyframes slide {

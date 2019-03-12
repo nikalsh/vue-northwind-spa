@@ -1,9 +1,13 @@
 <template>
   <div id="about">
-
     <div v-if="posts && posts.length">
       <div v-for="post of posts" v-bind:key="post.id">
-          <g-button-nuka color = "light-primary" size="button--size-s">{{post.CategoryID}},{{post.CategoryName}},{{post.Description}},{{post.Picture}}</g-button-nuka>
+        <g-button-nuka
+          color="light-primary"
+          size="button--size-s"
+        >{{post.CategoryID}},{{post.CategoryName}},{{post.Description}}</g-button-nuka>
+
+        <!-- <img id="pic" :src= "data:image/png;base64, " + {{post.Picture}} alt = "pic"> -->
         <!--<v-btn>{{post.CategoryName}}</v-btn>-->
         <!--<v-btn>{{post.Description}}</v-btn>-->
         <!--<v-btn>{{post.Picture}}</v-btn>
@@ -28,7 +32,7 @@ export default {
   },
   async created() {
     axios
-      .get("api/cat", {params:{table: "Customers"}})
+      .get("api/categories", { params: { table: "Category" } })
       .then(response => {
         this.posts = response.data;
       })
@@ -40,10 +44,8 @@ export default {
 </script>
 
 <style>
-
-button{
+button {
 }
-
 
 #about {
   font-family: "Avenir", Helvetica, Arial, sans-serif;

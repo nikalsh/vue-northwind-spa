@@ -14,6 +14,7 @@ export default {
 <!-- styling for the component -->
 <style>
 #home {
+ 
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,7 +22,8 @@ export default {
   color: aliceblue;
   padding-top: 60px;
   padding-bottom: 60px;
-  background-color: #2d8cf0;
+  border: 5px solid #2d8cf0;
+  /* background-color: #2d8cf0; */
 }
 </style>
 
