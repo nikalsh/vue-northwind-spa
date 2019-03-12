@@ -1,5 +1,5 @@
 <template>
-  <div id="pageTwo">
+  <div id="shippers">
     PAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE ONE <br>
     PAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE ONE <br>
     PAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE TWOPAGE ONE <br>
@@ -8,12 +8,12 @@
 
 <script>
 export default {
-  name: 'pageTwo'
+  name: 'shippers'
 }
 </script>
 <!-- styling for the component -->
 <style>
-#pageTwo {
+#shippers {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

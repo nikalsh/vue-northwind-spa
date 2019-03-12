@@ -1,9 +1,9 @@
 Vue.use(Router)
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import PageOne from '@/components/PageOne'
-import PageTwo from '@/components/PageTwo'
+import Customers from '@/components/Customers'
+import Products from '@/components/Products'
+import Shippers from '@/components/Shippers'
 import PageThree from '@/components/PageThree'
 import PageFour from '@/components/PageFour'
 import PageFive from '@/components/PageFive'
@@ -14,18 +14,18 @@ export default new Router({
   routes: [
     {
       path: '/components',
-      name: 'Home',
-      component: Home
+      name: 'Customers',
+      component: Customers
     },
     {
       path: '/components',
-      name: 'PageOne',
-      component: PageOne
+      name: 'Products',
+      component: Products
     },
     {
       path: '/components',
-      name: 'PageTwo',
-      component: PageTwo
+      name: 'Shippers',
+      component: Shippers
     },
     {
       path: '/components',

@@ -7,10 +7,10 @@ require('./assets/css/flipclock.css')
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
-import Home from '@/components/Home'
+import Customers from '@/components/Customers'
 import NavBar from '@/components/NavBar'
-import PageOne from '@/components/PageOne'
-import PageTwo from '@/components/PageTwo'
+import Products from '@/components/Products'
+import Shippers from '@/components/Shippers'
 import PageThree from '@/components/PageThree'
 import PageFour from '@/components/PageFour'
 import PageFive from '@/components/PageFive'
@@ -23,11 +23,11 @@ Vue.use(VueRouter)
 
 const routes = [
   // define the root url of the application.
-  { path: '/', component: Home },
-  { path: '/home', component: Home },
+  { path: '/', component: Customers },
+  { path: '/customers', component: Customers },
   { path: '/navBar', component: NavBar },
-  { path: '/PageOne', component: PageOne },
-  { path: '/PageTwo', component: PageTwo },
+  { path: '/Products', component: Products },
+  { path: '/Shippers', component: Shippers },
   { path: '/PageThree', component: PageThree },
   { path: '/PageFour', component: PageFour },
   { path: '/PageFive', component: PageFive },
