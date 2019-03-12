@@ -16,6 +16,10 @@ import PageFour from '@/components/PageFour'
 import PageFive from '@/components/PageFive'
 import About from '@/components/About'
 
+Vue.filter('toUSD', function (value) {
+  return `$${value}`;
+});
+
 import vueButtonEffect from 'vue-button-effect'
 Vue.use(vueButtonEffect)
 
@@ -33,12 +37,21 @@ const routes = [
   { path: '/PageFive', component: PageFive },
   { path: '/About', component: About }
 ]
-Vue.filter('toUSD', function (value) {
-  return `$${value}`;
-});
-// Create the router instance and pass the `routes` option
-// You can pass in additional options here, but let's
-// keep it simple for now.
+//
+//
+// "CustomerID": "ALFKI",
+//   "CompanyName": "Alfreds Futterkiste",
+//   "ContactName": "Maria Anders",
+//   "ContactTitle": "Sales Representative",
+//   "Address": "Obere Str. 57",
+//   "City": "Berlin",
+//   "Region": null,
+//   "PostalCode": "12209",
+//   "Country": "Germany",
+//   "Phone": "030-0074321",
+//   "Fax": "030-0076545" }
+
+
 const router = new VueRouter({
   routes, // short for routes: routes
   mode: 'history'
