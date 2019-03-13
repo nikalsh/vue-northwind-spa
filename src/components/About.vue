@@ -33,16 +33,16 @@ export default {
   margin-top: 60px;
 }
 
-img {
+#images img {
   border: 1px solid black;
   padding: 5px;
 }
 
-img:hover {
+#images img:hover {
   transform: scale(1.1);
 }
 
-img {
+#images img {
   transition: all 0.2s ease-in-out;
 }
 
