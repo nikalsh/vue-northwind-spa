@@ -1,18 +1,10 @@
 <template>
   <div id="about">
-    <div v-if="posts && posts.length">
-
-      <div
-        v-for="post of posts"
-        :key="post.id"
-      >
-        <g-button-nuka
-          color="light-primary"
-          size="button--size-s"
-        >
-          {{ post.CategoryID }},{{ post.CategoryName }},{{ post.Description }}
-        </g-button-nuka>
-
+    <div v-if="categories && categories.length">
+      <div v-for="categories of categories" :key="categories.id">
+        {{ categories.CategoryID }},{{ categories.CategoryName }}, {{ categories.Description }}
+        <!-- {{categories.Picture}} -->
+        <img id="pic" :src="'data:image/png;base64, ' + categories.Picture">
 
         <!-- <img id="pic" :src= "data:image/png;base64, " + {{post.Picture}} alt = "pic"> -->
         <!--<v-btn>{{post.CategoryName}}</v-btn>-->
@@ -23,12 +15,7 @@
     </div>
 
     <ul v-else-if="errors && errors.length">
-      <li
-        v-for="error of errors"
-        :key="error.id"
-      >
-        {{ error.message }}
-      </li>
+      <li v-for="error of errors" :key="error.id">{{ error.message }}</li>
     </ul>
   </div>
 </template>
@@ -36,23 +23,25 @@
 <script>
 import axios from "axios";
 
-
 export default {
   data() {
     return {
-      posts: [],
+      categories: [],
       errors: []
     };
   },
   async created() {
     axios
-      .get("api/cat", { params: { table: "Category" } })
+      .get("api/categories", { params: { table: "Category" } })
       .then(response => {
-        this.posts = response.data;
+       this.categories = response.data
       })
       .catch(e => {
         this.errors.push(e);
       });
+  },
+
+  methods: {
   }
 };
 </script>

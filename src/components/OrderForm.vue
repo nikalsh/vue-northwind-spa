@@ -4,19 +4,7 @@
 
 
       <input v-model="message" placeholder="edit me">
-      <input v-model="message" placeholder="edit me">
-      <input v-model="message" placeholder="edit me">
-      <input v-model="message" placeholder="edit me">
-      <input v-model="message" placeholder="edit me">
-      <input v-model="message" placeholder="edit me">
-      <input v-model="message" placeholder="edit me">
-      <input v-model="message" placeholder="edit me">
-      <input v-model="message" placeholder="edit me">
-      <input v-model="message" placeholder="edit me">
-      <input v-model="message" placeholder="edit me">
-      <input v-model="message" placeholder="edit me">
-      <input v-model="message" placeholder="edit me">
-      <input v-model="message" placeholder="edit me">
+   
     
 
 
