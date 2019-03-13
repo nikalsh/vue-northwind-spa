@@ -2,10 +2,13 @@
   <div id="all">
     <div id="column">
       <div class="CATcontainer">
-      <div v-if="categories && categories.length">
-        <div v-for="categories in categories" :key="categories.id">
-          <!-- <div class="container"> -->
-          
+        <div v-if="categories && categories.length">
+          <div
+            v-for="categories in categories"
+            :key="categories.id"
+          >
+            <!-- <div class="container"> -->
+
             <img
               id="pic"
               :src="'data:image/png;base64, ' + categories.Picture"
@@ -13,31 +16,69 @@
               :alt="categories.CategoryID"
               @click="imageClicked(categories.CategoryID)"
             >
-               <div class="overlay">
-            <div class="text">{{categories.CategoryName}}</div>
-          </div>
-       
+            <div class="overlay">
+              <div class="text">
+                {{ categories.CategoryName }}
+              </div>
+            </div>
           </div>
         </div>
-         <ul v-else-if="errors && errors.length">
-        <li v-for="error of errors" :key="error.id">{{ error.message }}</li>
-      </ul>
-    </div>
+        <ul v-else-if="errors && errors.length">
+          <li
+            v-for="error of errors"
+            :key="error.id"
+          >
+            {{ error.message }}
+          </li>
+        </ul>
       </div>
+    </div>
 
-     
+
 
     <br>
     <div id="tableContainer">
-      <table-component :data="products" sort-by="ProductID" sort-order="ProductID">
-        <table-column show="ProductName" label="ProductName" :sortable="true" :filterable="true"/>
-        <table-column show="CategoryID" label="CategoryID" :sortable="true" :filterable="true"/>
-        <table-column show="QuantityPerUnit" label="QuantityPerUnit"/>
-        <table-column show="UnitPrice" label="UnitPrice"/>
-        <table-column show="UnitsInStock" label="UnitsInStock"/>
-        <table-column show="UnitsOnOrder" label="UnitsOnOrder"/>
-        <table-column show="ReorderLevel" label="ReorderLevel"/>
-        <table-column show="Discontinued" label="Discontinued"/>
+      <table-component
+        :data="products"
+        sort-by="ProductID"
+        sort-order="ProductID"
+      >
+        <table-column
+          show="ProductName"
+          label="ProductName"
+          :sortable="true"
+          :filterable="true"
+        />
+        <table-column
+          show="CategoryID"
+          label="CategoryID"
+          :sortable="true"
+          :filterable="true"
+        />
+        <table-column
+          show="QuantityPerUnit"
+          label="QuantityPerUnit"
+        />
+        <table-column
+          show="UnitPrice"
+          label="UnitPrice"
+        />
+        <table-column
+          show="UnitsInStock"
+          label="UnitsInStock"
+        />
+        <table-column
+          show="UnitsOnOrder"
+          label="UnitsOnOrder"
+        />
+        <table-column
+          show="ReorderLevel"
+          label="ReorderLevel"
+        />
+        <table-column
+          show="Discontinued"
+          label="Discontinued"
+        />
       </table-component>
     </div>
   </div>
