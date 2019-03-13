@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'pageFive'
+  name: 'PageFiveViews'
 }
 </script>
 <!-- styling for the component -->

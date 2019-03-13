@@ -1,77 +1,95 @@
 <template>
-  <table-component
-    :data="fetchData"
-    sort-by="PostalCode"
-    sort-order="PostalCode"
-  >
-    <table-column
-      show="CustomerID"
-      label="CustomerID"
-      :sortable="true"
-      :filterable="true"
-    />
-    <table-column
-      show="CompanyName"
-      label="CompanyName"
-    />
-    <table-column
-      show="ContactName"
-      label="ContactName"
-    />
-    <table-column
-      show="ContactTitle"
-      label="ContactTitle"
-    />
-    <table-column
-      show="Address"
-      label="Address"
-    />
-    <table-column
-      show="City"
-      label="City"
-    />
-    <table-column
-      show="Region"
-      label="Region"
-    />
-    <table-column
-      show="PostalCode"
-      label="PostalCode"
-      data-type="numeric"
-      :sortable="true"
-      :filterable="true"
-    />
-    <table-column
-      show="Country"
-      label="Country"
-    />
-    <table-column
-      show="Phone"
-      label="Phone"
-    />
-    <table-column
-      show="Fax"
-      label="Fax"
-    />
-  </table-component>
+  <div id="column">
+    <div v-if="customers && customers.length">
+      <div
+        v-for="customer in customers"
+        :key="customer.id"
+      >
+      </div>
+    </div>
+    <table-component
+      :data="customers"
+      sort-by="CompanyName"
+      sort-order="CompanyName"
+    >
+      <table-column
+        show="CustomerID"
+        label="CustomerID"
+        :sortable="true"
+        :data-type="numeric"
+      />
+      <table-column
+        show="CompanyName"
+        label="CompanyName"
+      />
+      <table-column
+        show="ContactName"
+        label="ContactName"
+      />
+      <table-column
+        show="ContactTitle"
+        label="ContactTitle"
+      />
+      <table-column
+        show="Address"
+        label="Address"
+      />
+      <table-column
+        show="City"
+        label="City"
+      />
+      <table-column
+        show="Region"
+        label="Region"
+      />
+      <table-column
+        show="PostalCode"
+        label="PostalCode"
+        data-type="numeric"
+        :sortable="true"
+        :filterable="true"
+      />
+      <table-column
+        show="Country"
+        label="Country"
+      />
+      <table-column
+        show="Phone"
+        label="Phone"
+      />
+      <table-column
+        show="Fax"
+        label="Fax"
+      />
+    </table-component>
+  </div>
 </template>
 
 <script>
-  import axios from 'axios';
+  import axios from "axios";
 
   export default {
-    methods: {
-      async fetchData({ page, filter, sort }) {
-        const response = await axios.get("api/customers", { page });
-
-        // An object that has a `data` and an optional `pagination` property
-        return response;
-      }
+    data() {
+      return {
+        customers: [],
+        errors: []
+      };
+    },
+    async created() {
+      axios
+        .get("api/customers", {params: {table: "Customers"}})
+        .then(response => {
+          this.customers = response.data;
+        })
+        .catch(e => {
+          this.errors.push(e);
+        });
     }
   }
-</script>
+  </script>
 
-<style>
+<style scoped>
+
   *,
   *:after,
   *:before {
@@ -85,7 +103,7 @@
     display: flex;
     flex-direction: column;
     /* margin: 4em 0; */
-    margin: 0;  
+    margin: 0;
     /* background-color: white; */
   }
 
