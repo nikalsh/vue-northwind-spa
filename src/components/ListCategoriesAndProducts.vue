@@ -89,12 +89,12 @@ export default {
 }
 #all {
   /* word-break:break-all; */
-  border: 1px solid black;
+  /* border: 1px solid black; */
   color: black;
 }
 
 #column {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   /* position: relative;
   width: 54%;
   margin-left: auto;
@@ -103,8 +103,8 @@ export default {
 
 .CATcontainer {
   display: inline-block;
-  border: 1px solid black;
-  width: 54%;
+  /* border: 1px solid black; */
+  width: 57%;
   margin-left: auto;
   margin-right: auto;
   /* position: relative; */
