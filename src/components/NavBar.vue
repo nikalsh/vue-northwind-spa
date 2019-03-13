@@ -11,7 +11,7 @@
     <OrderForm></OrderForm>
     <nav>
       <router-link
-     
+
         v-for="routes in links"
         v-bind:key="routes.id"
         :to="`${routes.page}`"
@@ -26,7 +26,7 @@
 import OrderForm from "./OrderForm";
 export default {
   name: "NavBar",
- 
+
   data() {
     return {
       links: [
@@ -68,7 +68,7 @@ export default {
       ]
     };
 
-  
+
   },
 
 components: {
@@ -81,7 +81,7 @@ OrderForm: OrderForm
 button {
 }
 #what {
-  color: aliceblue;
+  color: #36ad23;
   font-size: 76px;
   /* position: absolute; */
   width: 100%;
@@ -91,7 +91,7 @@ button {
   left: 0;
 }
 #title{
- color: aliceblue;
+ color: #36ad23;
   font-size: 76px;
   position: absolute;
   width: 100%;

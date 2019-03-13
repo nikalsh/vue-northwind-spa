@@ -26,14 +26,11 @@ export default {
   text-decoration-color: aliceblue;
   color: #2c3e50;
   /* bottom: 0; */
-  background-color: #34495e;
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-:root {
-  background-color: #34495e;
-}
+
 </style>

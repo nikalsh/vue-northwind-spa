@@ -1,14 +1,14 @@
 <template>
   <table-component
     :data="fetchData"
-    sort-by="PostalCode"
-    sort-order="PostalCode"
+    sort-by="CompanyName"
+    sort-order="CompanyName"
   >
     <table-column
       show="CustomerID"
       label="CustomerID"
       :sortable="true"
-      :filterable="true"
+      :data-type="numeric"
     />
     <table-column
       show="CompanyName"
@@ -57,12 +57,15 @@
 </template>
 
 <script>
+
   import axios from 'axios';
 
   export default {
     methods: {
       async fetchData({ page, filter, sort }) {
-        const response = await axios.get("api/customers", { page });
+        this.loading = true;
+        const response = await axios.get('api/customers', {params: { page, filter, sort }});
+        this.loading = false;
 
         // An object that has a `data` and an optional `pagination` property
         return response;
@@ -71,7 +74,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   *,
   *:after,
   *:before {
