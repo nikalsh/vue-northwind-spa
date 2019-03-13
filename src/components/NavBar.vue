@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="OrderContainer">
     <div class="sliding-background"></div>
 
     <div id="what">
@@ -78,17 +78,24 @@ OrderForm: OrderForm
 };
 </script>
 <style>
+.OrderContainer{
+ margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* position: relative; */
+
+}
 button {
 }
 #what {
-  color: #36ad23;
-  font-size: 76px;
+  /* color: #36ad23; */
+  /* font-size: 76px; */
   /* position: absolute; */
-  width: 100%;
-  height: 50%;
+  /* width: 100%; */
+  /* height: 50%; */
 
-  top: -15px;
-  left: 0;
+  /* top: -15px; */
+  /* left: 0; */
 }
 #title{
  color: white;
@@ -105,14 +112,9 @@ button {
 
 }
 nav {
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
-.container {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  position: relative;
-}
+
 
 h2 {
 }
