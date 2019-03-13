@@ -85,7 +85,7 @@
     display: flex;
     flex-direction: column;
     /* margin: 4em 0; */
-    margin: 0;
+    margin: 0;  
     /* background-color: white; */
   }
 
