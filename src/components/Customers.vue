@@ -12,7 +12,11 @@
     components: {
       'ListCustomers': ListCustomers,
     }
+
   }
+
+    console.log("hi");
+
 </script>
 <!-- styling for the component -->
 <style>

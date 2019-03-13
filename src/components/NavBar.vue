@@ -11,7 +11,7 @@
     <OrderForm></OrderForm>
     <nav>
       <router-link
-        tag="router-button"
+     
         v-for="routes in links"
         v-bind:key="routes.id"
         :to="`${routes.page}`"
@@ -61,7 +61,7 @@ export default {
           page: "/PageFive"
         },
         {
-          id: 5,
+          id: 6,
           text: "About",
           page: "/About"
         }
