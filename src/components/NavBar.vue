@@ -103,7 +103,7 @@ button {
   left: 0;
 }
 nav {
-  margin-top: 35px;
+  margin-top: 20px;
 }
 .container {
   margin: 0;
