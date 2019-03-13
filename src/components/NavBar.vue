@@ -99,7 +99,7 @@ button {
   width: 100%;
   height: auto;
   /* border: 1px solid black; */
-  top: -15px;
+  top: -17px;
   left: 0;
   /* opacity: 0.0; */
 
@@ -120,7 +120,7 @@ h2 {
   margin: 0;
   padding: 0;
   background: url("../assets/logo.png") repeat-x;
-  height: 150px;
+  height: 173px;
   width: 3000px;
   animation: slide 7s linear infinite;
   z-index: -100;
