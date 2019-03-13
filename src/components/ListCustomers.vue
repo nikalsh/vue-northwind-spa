@@ -1,74 +1,199 @@
 <template>
-  <div id="about">
-    <div v-if="posts && posts.length">
-      <div
-        v-for="post of posts"
-        :key="post.id"
-      >
-        {{ post.CompanyName }}
-      </div>
-    </div>
-
-    <ul v-else-if="errors && errors.length">
-      <li
-        v-for="error of errors"
-        :key="error.id"
-      >
-        {{ error.message }}
-      </li>
-    </ul>
-  </div>
+  <table-component
+    :data="fetchData"
+    sort-by="PostalCode"
+    sort-order="PostalCode"
+  >
+    <table-column
+      show="CustomerID"
+      label="CustomerID"
+      :sortable="true"
+      :filterable="true"
+    />
+    <table-column
+      show="CompanyName"
+      label="CompanyName"
+    />
+    <table-column
+      show="ContactName"
+      label="ContactName"
+    />
+    <table-column
+      show="ContactTitle"
+      label="ContactTitle"
+    />
+    <table-column
+      show="Address"
+      label="Address"
+    />
+    <table-column
+      show="City"
+      label="City"
+    />
+    <table-column
+      show="Region"
+      label="Region"
+    />
+    <table-column
+      show="PostalCode"
+      label="PostalCode"
+      data-type="numeric"
+      :sortable="true"
+      :filterable="true"
+    />
+    <table-column
+      show="Country"
+      label="Country"
+    />
+    <table-column
+      show="Phone"
+      label="Phone"
+    />
+    <table-column
+      show="Fax"
+      label="Fax"
+    />
+  </table-component>
 </template>
 
 <script>
-import axios from "axios";
-export default {
-  name: "CustomerList",
-  data() {
-    return {
-      posts: {
-        CustomerID: '',
-        CompanyName: '',
-        ContactName: '',
-        ContactTitle: '',
-        Address: '',
-        City: '',
-        Region: '',
-        PostalCode: '',
-        Country: '',
-        Phone: '',
-        Fax: ''
-      },
-      errors: []
-    };
-  },
-  async created() {
-    axios
-      .get("api/customers", {params:{table: "Customers"}})
-      .then(response => {
-        this.posts = response.data;
-      })
-      .catch(e => {
-        this.errors.push(e);
-      });
+  import axios from 'axios';
+
+  export default {
+    methods: {
+      async fetchData({ page, filter, sort }) {
+        const response = await axios.get("api/customers", { page });
+
+        // An object that has a `data` and an optional `pagination` property
+        return response;
+      }
+    }
   }
-};
 </script>
 
 <style>
+  *,
+  *:after,
+  *:before {
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-button{
-}
+  .table-component {
+    display: flex;
+    flex-direction: column;
+    margin: 4em 0;
+  }
 
+  .table-component__filter {
+    align-self: flex-end;
+  }
 
-#about {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: aliceblue;
-  margin-top: 60px;
-}
+  .table-component__filter__field {
+    padding: 0 1.25em 0 .75em;
+    height: 2.5em;
+    border: solid 2px #e0e0e0;
+    border-radius: 2em;
+    font-size: inherit;
+  }
 
+  .table-component__filter__clear {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    color: #007593;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .table-component__filter__field:focus {
+    outline: 0;
+    border-color: #007593;
+  }
+
+  .table-component__table-wrapper {
+    overflow-x: auto;
+    margin: 1em 0;
+    width: 100%;
+    border: solid 1px #ddd;
+    border-bottom: none;
+  }
+
+  .table-component__table {
+    min-width: 100%;
+    border-collapse: collapse;
+    border-bottom: solid 1px #ddd;
+    table-layout: fixed;
+  }
+
+  .table-component__table__caption {
+    position: absolute;
+    top: auto;
+    left: -10000px;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+  }
+
+  .table-component__table th,
+  .table-component__table td {
+    padding: .75em 1.25em;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  .table-component__table th {
+    background-color: #e0e0e0;
+    color: #999;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-size: .85em;
+  }
+
+  .table-component__table tbody tr:nth-child(even) {
+    background-color: #f0f0f0;
+  }
+
+  .table-component__table a {
+    color: #007593;
+  }
+
+  .table-component__message {
+    color: #999;
+    font-style: italic;
+  }
+
+  .table-component__th--sort,
+  .table-component__th--sort-asc,
+  .table-component__th--sort-desc {
+    text-decoration: underline;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .table-component__th--sort-asc:after,
+  .table-component__th--sort-desc:after {
+    position: absolute;
+    left: .25em;
+    display: inline-block;
+    color: #bbb;
+  }
+
+  .table-component__th--sort-asc:after {
+    content: '↑';
+  }
+
+  .table-component__th--sort-desc:after {
+    content: '↓';
+  }
 </style>
-
