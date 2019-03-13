@@ -57,8 +57,8 @@ export default {
         },
         {
           id: 5,
-          text: "PageFive",
-          page: "/PageFive"
+          text: "Views",
+          page: "/PageFiveViews"
         },
         {
           id: 6,
@@ -97,10 +97,12 @@ button {
   font-weight: bold;
   position: absolute;
   width: 100%;
-  height: 50%;
-
+  height: auto;
+  /* border: 1px solid black; */
   top: -15px;
   left: 0;
+  /* opacity: 0.0; */
+
 }
 nav {
   margin-top: 20px;

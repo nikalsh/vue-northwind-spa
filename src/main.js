@@ -3,6 +3,9 @@
 var cors = require('cors')
 
 
+const bus = new Vue()
+Vue.prototype.$bus = bus
+
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
@@ -13,7 +16,7 @@ import Products from '@/components/Products'
 import Shippers from '@/components/Shippers'
 import PageThree from '@/components/PageThree'
 import PageFour from '@/components/PageFour'
-import PageFive from '@/components/PageFive'
+import PageFiveViews from '@/components/PageFiveViews'
 import About from '@/components/About'
 
 
@@ -38,7 +41,7 @@ const routes = [
   { path: '/Shippers', component: Shippers },
   { path: '/PageThree', component: PageThree },
   { path: '/PageFour', component: PageFour },
-  { path: '/PageFive', component: PageFive },
+  { path: '/PageFiveViews', component: PageFiveViews },
   { path: '/About', component: About }
 ]
 

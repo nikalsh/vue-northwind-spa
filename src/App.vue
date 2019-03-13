@@ -29,12 +29,15 @@ export default {
   /* background-color: #34495e; */
   background-color:lightgray;
   left: 0;
-  position: absolute;
   right: 0;
   top: 0;
 }
 
 :root {
   background-color: lightgray;
+overflow-y: scroll;
+
 }
+
+
 </style>

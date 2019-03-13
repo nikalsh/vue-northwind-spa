@@ -1,20 +1,32 @@
 <template>
-  <div id="order">
-    <div id="input">
+  <div id="orderform">
+    <div v-if="message && message.length">
+      <div v-for="message in message" :key="message.ProductName">
+        <input type="text" :value = message.ProductName>
 
 
-      <input v-model="message" placeholder="edit me">
-   
-    
-
-
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "orderform"
+  name: "orderform",
+
+  data() {
+    return {
+      message: []
+    };
+  },
+  created() {
+    this.$bus.$on("product-payload", payload => {
+      console.log(payload.ProductName);
+      this.message.push(payload);
+    });
+  },
+
+  methods: {}
 };
 </script>
 <!-- styling for the component -->
