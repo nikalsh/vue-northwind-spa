@@ -91,8 +91,10 @@ button {
   left: 0;
 }
 #title{
- color: #36ad23;
-  font-size: 76px;
+ color: white;
+  text-shadow: 0px 0px 150px blue;
+  font-size: 90px;
+  font-weight: bold;
   position: absolute;
   width: 100%;
   height: 50%;
@@ -101,7 +103,7 @@ button {
   left: 0;
 }
 nav {
-  margin-top: 35px;
+  margin-top: 20px;
 }
 .container {
   margin: 0;

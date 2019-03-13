@@ -78,8 +78,8 @@
   *,
   *:after,
   *:before {
-    position: relative;
-    box-sizing: border-box;
+    /* position: relative; */
+    /* box-sizing: border-box; */
     margin: 0;
     padding: 0;
   }
@@ -87,7 +87,9 @@
   .table-component {
     display: flex;
     flex-direction: column;
-    margin: 4em 0;
+    /* margin: 4em 0; */
+    margin: 0;  
+    /* background-color: white; */
   }
 
   .table-component__filter {

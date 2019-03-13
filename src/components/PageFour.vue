@@ -1,8 +1,8 @@
 <template>
-  <div id="about">
-    <!--PAGE PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR ONE <br>-->
-    <!--PAGE PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR ONE <br>-->
-    <!--PAGE PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR ONE <br>-->
+  <div id="pageFour">
+    PAGE PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR ONE <br>
+    PAGE PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR ONE <br>
+    PAGE PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR PAGEFOUR ONE <br>
 
 </div>
 </template>
@@ -14,8 +14,8 @@ export default {
 </script>
 <!-- styling for the component -->
 <style>
-#about {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+#pageFour {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

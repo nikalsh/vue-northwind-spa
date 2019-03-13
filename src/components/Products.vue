@@ -1,17 +1,17 @@
 <template>
   <div id="container">
-    <list-categories>
+    <ListCategoriesAndProducts>
   
-    </list-categories>
+    </ListCategoriesAndProducts>
   </div>
 </template>
 
 <script>
-import ListCategories from "./ListCategories";
+import ListCategoriesAndProducts from "./ListCategoriesAndProducts";
 export default {
-  name: "pageOne",
+  name: "Products",
   components: {
-    ListCategories: ListCategories
+    ListCategoriesAndProducts: ListCategoriesAndProducts
   }
 };
 </script>
@@ -23,6 +23,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: aliceblue;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 </style>
