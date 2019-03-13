@@ -1,6 +1,6 @@
 <template>
   <div id="about">
-    <div>Powered By:</div>
+    <div style = "font-weight: bold;">Powered By:</div>
     <br>
     <div id="images">
       <img src="../assets/logo.png" alt="vuelogo" height="100" style=" padding: 15px">
@@ -35,7 +35,7 @@ export default {
 }
 
 #images img {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 5px;
 }
 

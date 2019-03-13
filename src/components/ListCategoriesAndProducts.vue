@@ -29,15 +29,20 @@
 
     <br>
     <div id="tableContainer">
-      <table-component :data="products" sort-by="ProductID" sort-order="ProductID">
-        <table-column show="ProductName" label="ProductName" :sortable="true" :filterable="true"/>
-        <table-column show="CategoryID" label="CategoryID" :sortable="true" :filterable="true"/>
+      <table-component :data="products" sort-by="ProductName" sort-order="ProductName" @rowClick="handleRowClick"> 
+        <table-column show="ProductName" label="ProductName" :filterable="true"/>
+        <table-column show="CategoryID" label="CategoryID" data-type="numeric"
+       :sortable="true"/>
         <table-column show="QuantityPerUnit" label="QuantityPerUnit"/>
-        <table-column show="UnitPrice" label="UnitPrice"/>
-        <table-column show="UnitsInStock" label="UnitsInStock"/>
-        <table-column show="UnitsOnOrder" label="UnitsOnOrder"/>
-        <table-column show="ReorderLevel" label="ReorderLevel"/>
-        <table-column show="Discontinued" label="Discontinued"/>
+        <table-column show="UnitPrice" label="UnitPrice" data-type="numeric"
+       :sortable="true"/>
+        <table-column show="UnitsInStock" label="UnitsInStock" data-type="numeric"
+       :sortable="true"/>
+        <table-column show="UnitsOnOrder" label="UnitsOnOrder" data-type="numeric"
+       :sortable="true"/>
+        <table-column show="ReorderLevel" label="ReorderLevel" data-type="numeric"
+       :sortable="true"/>
+        <!-- <table-column show="Discontinued" label="Discontinued"/> -->
       </table-component>
     </div>
   </div>
@@ -69,7 +74,6 @@ export default {
 
   methods: {
     imageClicked: function(id) {
-      console.log("we clickin' on categoryID: " + id);
 
       axios
         .get("api/products", { params: { table: id } })
@@ -79,7 +83,11 @@ export default {
         .catch(e => {
           this.errors.push(e);
         });
-    }
+    },
+     handleRowClick: function(payload){
+      this.$bus.$emit('product-payload', payload.data)
+      
+      }
   }
 };
 </script>
@@ -146,6 +154,7 @@ export default {
   /* margin: 4em 0; */
   margin: 0;
   /* background-color: white; */
+  cursor: pointer;
 }
 
 .table-component__filter {

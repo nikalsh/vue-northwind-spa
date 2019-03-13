@@ -3,6 +3,9 @@
 var cors = require('cors')
 
 
+const bus = new Vue()
+Vue.prototype.$bus = bus
+
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
