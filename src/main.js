@@ -7,6 +7,7 @@ require('./assets/css/flipclock.css')
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
+import { TableComponent, TableColumn } from 'vue-table-component';
 import Customers from '@/components/Customers'
 import NavBar from '@/components/NavBar'
 import Products from '@/components/Products'
@@ -15,6 +16,10 @@ import PageThree from '@/components/PageThree'
 import PageFour from '@/components/PageFour'
 import PageFive from '@/components/PageFive'
 import About from '@/components/About'
+
+
+Vue.component('table-component', TableComponent);
+Vue.component('table-column', TableColumn);
 
 Vue.filter('toUSD', function (value) {
   return `$${value}`;
@@ -37,20 +42,6 @@ const routes = [
   { path: '/PageFive', component: PageFive },
   { path: '/About', component: About }
 ]
-//
-//
-// "CustomerID": "ALFKI",
-//   "CompanyName": "Alfreds Futterkiste",
-//   "ContactName": "Maria Anders",
-//   "ContactTitle": "Sales Representative",
-//   "Address": "Obere Str. 57",
-//   "City": "Berlin",
-//   "Region": null,
-//   "PostalCode": "12209",
-//   "Country": "Germany",
-//   "Phone": "030-0074321",
-//   "Fax": "030-0076545" }
-
 
 const router = new VueRouter({
   routes, // short for routes: routes

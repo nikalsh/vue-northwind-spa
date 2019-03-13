@@ -1,14 +1,14 @@
 <template>
-  <div id="customers">
-    <list-customers></list-customers>
-
-  </div>
+  <!--<div id="customers">-->
+  <!--<list-customers></list-customers>-->
+<ListCustomers></ListCustomers>
+  <!--</div>-->
 </template>
 
 <script>
   import ListCustomers from "./ListCustomers";
   export default {
-    name: 'customers',
+    name: 'Customers',
     components: {
       'ListCustomers': ListCustomers,
     }
