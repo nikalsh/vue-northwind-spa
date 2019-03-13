@@ -1,5 +1,5 @@
 <template>
-  <div id="about">
+  <div id="pageFive">
     PAGE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE ONE <br>
     PAGE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE ONE <br>
     PAGE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE ONE <br>
@@ -13,8 +13,8 @@ export default {
 </script>
 <!-- styling for the component -->
 <style>
-#about {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+#pageFive {
+ font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

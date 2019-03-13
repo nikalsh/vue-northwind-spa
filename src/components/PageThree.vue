@@ -1,8 +1,8 @@
 <template>
-  <div id="about">
+  <div id="pageThree">
+    <!-- PAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE ONE <br>
     PAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE ONE <br>
-    PAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE ONE <br>
-    PAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE ONE <br>
+    PAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE THREEPAGE ONE <br> -->
   </div>
 </template>
 
@@ -13,8 +13,8 @@ export default {
 </script>
 <!-- styling for the component -->
 <style>
-#about {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+#pageThree {
+ font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

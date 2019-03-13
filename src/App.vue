@@ -26,7 +26,8 @@ export default {
   text-decoration-color: aliceblue;
   color: #2c3e50;
   /* bottom: 0; */
-  background-color: #34495e;
+  /* background-color: #34495e; */
+  background-color:lightgray;
   left: 0;
   position: absolute;
   right: 0;
@@ -34,6 +35,6 @@ export default {
 }
 
 :root {
-  background-color: #34495e;
+  background-color: lightgray;
 }
 </style>
