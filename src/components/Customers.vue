@@ -1,7 +1,7 @@
 <template>
   <!--<div id="customers">-->
   <!--<list-customers></list-customers>-->
-  <div id="container">
+  <div id="customerListContainer">
 <ListCustomers></ListCustomers>
   <!--</div>-->
   </div>
@@ -12,7 +12,7 @@
   export default {
     name: 'Customers',
     components: {
-      'ListCustomers': ListCustomers,
+      ListCustomers: ListCustomers,
     }
 
   }
@@ -20,14 +20,14 @@
 </script>
 <!-- styling for the component -->
 <style>
-  #container {
-    padding: 0;
+  #customerListContainer {
+    /* padding: 0;
     margin: 0;
     font-family: "Avenir", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: aliceblue
+    color: aliceblue */
     /* margin-top: 60px; */
   }
 </style>
