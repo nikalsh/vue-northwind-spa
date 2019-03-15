@@ -21,7 +21,6 @@ import PageFour from '@/components/PageFour'
 import PageFiveViews from '@/components/PageFiveViews'
 import About from '@/components/About'
 
-
 Vue.component('table-component', TableComponent);
 Vue.component('table-column', TableColumn);
 

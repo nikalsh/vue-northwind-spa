@@ -105,6 +105,11 @@ export default {
 </script>
 
 <style>
+
+#all {
+  /* position: relative;
+  z-index: 0; */
+}
 #tableContainer {
 }
 
