@@ -1,13 +1,19 @@
 <template>
   <div id="shippers">
-  asd
+    <ListShippers></ListShippers>
   </div>
 </template>
 
 <script>
-export default {
-  name: "shippers"
-};
+  import ListShippers from "./ListShippers";
+  export default {
+    name: 'Shippers',
+    components: {
+      ListShippers: ListShippers,
+    }
+
+  }
+
 </script>
 <!-- styling for the component -->
 <style>

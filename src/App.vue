@@ -104,6 +104,7 @@ body {
 .table-component__table th,
 .table-component__table td {
   padding: 0.75em 1.25em;
+  /* padding: 0.1em 0.25em; */
   vertical-align: top;
   text-align: left;
 }

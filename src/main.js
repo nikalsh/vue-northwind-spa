@@ -5,6 +5,8 @@
 const bus = new Vue()
 Vue.prototype.$bus = bus
 
+
+
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
@@ -18,6 +20,7 @@ import PageThree from '@/components/PageThree'
 import PageFour from '@/components/PageFour'
 import PageFiveViews from '@/components/PageFiveViews'
 import About from '@/components/About'
+
 
 Vue.component('table-component', TableComponent);
 Vue.component('table-column', TableColumn);

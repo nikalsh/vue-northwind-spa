@@ -1,6 +1,6 @@
 <template>
-  <table-component :data="customers" sort-by="CompanyName" sort-order="CompanyName">
-    <table-column show="CustomerID" label="CustomerID" :sortable="true" :data-type="numeric"/>
+  <table-component :data="customers" sort-by="CompanyName" sort-order="CompanyName" @rowClick="handleRowClick">
+    <table-column show="CustomerID" label="CustomerID" :sortable="true" />
     <table-column show="CompanyName" label="CompanyName"/>
     <table-column show="ContactName" label="ContactName"/>
     <table-column show="ContactTitle" label="ContactTitle"/>
@@ -38,6 +38,13 @@ export default {
       .catch(e => {
         this.errors.push(e);
       });
+  }
+,
+  methods: {
+    handleRowClick: function(payload) {
+      this.$bus.$emit("customer-payload", payload.data);
+    }
+  
   }
 };
 </script>

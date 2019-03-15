@@ -18,7 +18,7 @@
     "vue-button-effect": "0.0.3",
     "vue-router": "^3.0.2",
     "vue-table-component": "^1.9.2",
-    "vuetify": "^1.5.2"
+    "vuetify": "^1.5.6"
   },
   "devDependencies": {
     "@mdi/font": "^3.5.94",

@@ -30,6 +30,9 @@
         sort-by="ProductName"
         sort-order="ProductName"
         @rowClick="handleRowClick"
+        :show-filter="false"
+        :show-caption="false"
+        filter-no-results=" "
       >
         <table-column show="ProductName" label="ProductName" :filterable="true"/>
         <table-column show="CategoryID" label="CategoryID" data-type="numeric" :sortable="true"/>
@@ -152,5 +155,8 @@ export default {
   display: none;
 }
 
+#tableContainer .table-component {
+  margin: 0;
+}
 </style>
 

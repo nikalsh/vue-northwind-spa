@@ -1,6 +1,6 @@
 <template>
   <div id="about">
-    <div style = "font-weight: bold;">Powered By:</div>
+    <div style="font-weight: bold;">Powered By:</div>
     <br>
     <div id="images">
       <img src="../assets/logo.png" alt="vuelogo" height="100" style=" padding: 15px">
