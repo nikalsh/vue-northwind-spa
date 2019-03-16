@@ -161,6 +161,34 @@ export default {
     },
 
     save: function(event) {
+      //testdata
+      axios.post("api/save",  {
+        "CustomerID": "BLONP",
+        "EmployeeID": 9,
+        "OrderDate": "1997-06-11T22:00:00.000Z",
+        "RequiredDate": "1997-07-09T22:00:00.000Z",
+        "ShippedDate": "1997-06-17T22:00:00.000Z",
+        "ShipVia": 1,
+        "Freight": "88.4000",
+        "ShipName": "Blondel pre et fils",
+        "ShipAddress": "24, place Klber",
+        "ShipCity": "Strasbourg",
+        "ShipRegion": null,
+        "ShipPostalCode": "67000",
+        "ShipCountry": "France",
+        "OrderDetails": [
+          {"ProductID": 4, "UnitPrice": 16.8, "Quantity": 6, "Discount": 0},
+          {"ProductID": 1, "UnitPrice": 16.8, "Quantity": 6, "Discount": 0},
+          {"ProductID": 2, "UnitPrice": 16.8, "Quantity": 6, "Discount": 0}
+        ]
+      })
+        .then((res) => {
+          console.log(`statusCode: ${res.statusCode}`)
+          console.log(res)
+        })
+        .catch((error) => {
+          console.error(error)
+        })
       //AXIOS POST REQUEST NEEDS TO HAPPEN HERE
       // psuedo-code:
       // axiost.post(new order (products, customer, selectedEmployee, shipper))
