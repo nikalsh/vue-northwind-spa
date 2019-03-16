@@ -1,41 +1,49 @@
 <template>
-  <div class="container">
+  <div class="OrderContainer">
     <div class="sliding-background"></div>
 
     <div id="what">
-      <h2>NORTHWIND SPA</h2>
+
+      <div id = "title">NORTHWIND</div>
+
     </div>
+
+    <OrderForm></OrderForm>
     <nav>
       <router-link
-        tag="router-button"
+
         v-for="routes in links"
         v-bind:key="routes.id"
         :to="`${routes.page}`"
-      ><g-button-nuka color = "primary">{{routes.text}}</g-button-nuka></router-link>
+      >
+        <g-button-nuka color="primary" size="button--size-m">{{routes.text}}</g-button-nuka>
+      </router-link>
     </nav>
   </div>
 </template>
 
 <script>
+import OrderForm from "./OrderForm";
 export default {
   name: "NavBar",
+
   data() {
     return {
       links: [
         {
           id: 0,
-          text: "Home",
-          page: "/Home"
+          text: "Customers",
+          page: "/Customers"
         },
         {
           id: 1,
-          text: "PageOne",
-          page: "/PageOne"
+          text: "Products",
+          page: "/Products"
         },
         {
           id: 2,
-          text: "PageTwo",
-          page: "/PageTwo"
+          text: "Shippers",
+          page: "/Shippers"
         },
         {
           id: 3,
@@ -49,54 +57,79 @@ export default {
         },
         {
           id: 5,
-          text: "PageFive",
-          page: "/PageFive"
+          text: "Views",
+          page: "/PageFiveViews"
         },
         {
-          id: 5,
+          id: 6,
           text: "About",
           page: "/About"
         }
       ]
     };
-  }
+
+
+  },
+
+components: {
+OrderForm: OrderForm
+}
+
 };
 </script>
 <style>
 
+
+
+
+.OrderContainer{
+ margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* position: relative; */
+
+}
 button {
-  
 }
 #what {
-  color: aliceblue;
-  font-size: 76px;
+  /* color: #36ad23; */
+  /* font-size: 76px; */
+  /* position: absolute; */
+  /* width: 100%; */
+  /* height: 50%; */
+
+  /* top: -15px; */
+  /* left: 0; */
+}
+#title{
+ color: white;
+  text-shadow: 0px 0px 150px blue;
+  font-size: 90px;
+  font-weight: bold;
   position: absolute;
   width: 100%;
-  height: 50%;
-
-  top: -15px;
+  height: auto;
+  /* border: 1px solid black; */
+  top: -17px;
   left: 0;
+  /* opacity: 0.0; */
 
 }
-
 nav {
-  margin-top: 35px;
+  /* margin-top: 20px; */
 }
-.container {
-  overflow: hidden;
-  position: relative;
 
-}
 
 h2 {
-
 }
 .sliding-background {
+  margin: 0;
+  padding: 0;
   background: url("../assets/logo.png") repeat-x;
-  height: 185px;
+  height: 173px;
   width: 3000px;
   animation: slide 7s linear infinite;
-  z-index: 0;
+  z-index: -100;
 }
 
 @keyframes slide {

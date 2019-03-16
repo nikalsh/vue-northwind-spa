@@ -1,27 +1,24 @@
 <template>
-  <div id="home">
-    PAGE HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME ONE <br>
-    PAGE HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME ONE <br>
-    PAGE HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME ONE <br>
+  <div id="shippers">
+    <ListShippers></ListShippers>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'home'
-}
+  import ListShippers from "./ListShippers";
+  export default {
+    name: 'Shippers',
+    components: {
+      ListShippers: ListShippers,
+    }
+
+  }
+
 </script>
 <!-- styling for the component -->
 <style>
-#home {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: aliceblue;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background-color: #2d8cf0;
+#shippers {
+  
 }
 </style>
 

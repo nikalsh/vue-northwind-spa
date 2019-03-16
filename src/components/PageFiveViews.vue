@@ -1,5 +1,5 @@
 <template>
-  <div id="about">
+  <div id="pageFive">
     PAGE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE ONE <br>
     PAGE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE ONE <br>
     PAGE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE PAGEFIVE ONE <br>
@@ -8,17 +8,13 @@
 
 <script>
 export default {
-  name: 'pageFive'
+  name: 'PageFiveViews'
 }
 </script>
 <!-- styling for the component -->
 <style>
-#about {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: aliceblue;
+#pageFive {
+
   margin-top: 60px;
 }
 </style>
