@@ -161,26 +161,35 @@ export default {
     },
 
     save: function(event) {
-      //testdata
+      var orderInfo =[];
+      for(i=0;i<this.products.length; i++){
+        var p=this.products[i]
+        var x=orderInfo.findIndex(function (element) {
+          return element.ProductID===p.ProductID;
+        });
+        if(x.isNaN()){
+          var c={"ProductID": p.ProductID, "UnitPrice": p.UnitPrice, "Quantity": 1};
+          orderInfo.push(c);
+        }else{
+          orderInfo[x].Quantity++;
+        }
+
+      }
       axios.post("api/save",  {
-        "CustomerID": "BLONP",
-        "EmployeeID": 9,
-        "OrderDate": "1997-06-11T22:00:00.000Z",
-        "RequiredDate": "1997-07-09T22:00:00.000Z",
-        "ShippedDate": "1997-06-17T22:00:00.000Z",
-        "ShipVia": 1,
-        "Freight": "88.4000",
-        "ShipName": "Blondel pre et fils",
-        "ShipAddress": "24, place Klber",
-        "ShipCity": "Strasbourg",
-        "ShipRegion": null,
-        "ShipPostalCode": "67000",
-        "ShipCountry": "France",
-        "OrderDetails": [
-          {"ProductID": 4, "UnitPrice": 16.8, "Quantity": 6, "Discount": 0},
-          {"ProductID": 1, "UnitPrice": 16.8, "Quantity": 6, "Discount": 0},
-          {"ProductID": 2, "UnitPrice": 16.8, "Quantity": 6, "Discount": 0}
-        ]
+
+        "CustomerID": this.customer.CustomerID,
+        "EmployeeID": this.selectedEmployee.EmployeeID,
+        "OrderDate": this.orderDate.date,
+        "RequiredDate": this.RequiredDate.date,
+        "ShipVia": this.selectedShipper.ShipperID,
+        "Freight": this.freight,
+        "ShipName": this.customer.CompanyName,
+        "ShipAddress": this.customer.Address,
+        "ShipCity": this.customer.City,
+        "ShipRegion": this.customer.Region,
+        "ShipPostalCode": this.customer.PostalCode,
+        "ShipCountry": this.customer.Country,
+        "OrderDetails": orderInfo
       })
         .then((res) => {
           console.log(`statusCode: ${res.statusCode}`)
