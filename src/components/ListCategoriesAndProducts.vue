@@ -91,6 +91,7 @@ export default {
       axios
         .get("api/products", { params: { table: id } })
         .then(response => {
+          //response.data.forEach(function(element) { element.Quantity = 1; });
           this.products = response.data;
         })
         .catch(e => {

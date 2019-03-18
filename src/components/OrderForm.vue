@@ -70,6 +70,7 @@
         <table-column show="ProductName" label="Product"/>
         <table-column show="QuantityPerUnit" label="QuantityPerUnit" :hidden="true"/>
         <table-column show="UnitPrice" label="Price" data-type="numeric" :sortable="true"/>
+        <table-column show="Quantity" label="Quantity" data-type="numeric"/>
         <table-column
           show="UnitsInStock"
           label="Stock"
@@ -113,6 +114,7 @@ export default {
   data() {
     return {
       products: [],
+      Quantity: 0,
       employees: [],
       selectedEmployee: "",
       customer: "",
@@ -145,7 +147,16 @@ export default {
 
     //eventListeners
     this.$bus.$on("product-payload", payload => {
-      this.products.push(payload);
+      var x=this.products.findIndex(function (element) {
+        return element===payload;
+      });
+      if (x===-1){
+        this.$set( payload, 'Quantity', 1 );
+        this.products.push(payload);
+      }else{
+        this.products[x].Quantity++;
+      }
+
     }),
       this.$bus.$on("customer-payload", payload => {
         this.customer = payload;
@@ -162,27 +173,19 @@ export default {
 
     save: function(event) {
       var orderInfo =[];
-      for(i=0;i<this.products.length; i++){
-        var p=this.products[i]
-        var x=orderInfo.findIndex(function (element) {
-          return element.ProductID===p.ProductID;
-        });
-        if(x.isNaN()){
-          var c={"ProductID": p.ProductID, "UnitPrice": p.UnitPrice, "Quantity": 1};
-          orderInfo.push(c);
-        }else{
-          orderInfo[x].Quantity++;
-        }
+      this.products.forEach(function (p) {
+        var c={"ProductID": p.ProductID, "UnitPrice": p.UnitPrice, "Quantity": p.Quantity};
+        orderInfo.push(c);
+      });
 
-      }
       axios.post("api/save",  {
 
         "CustomerID": this.customer.CustomerID,
         "EmployeeID": this.selectedEmployee.EmployeeID,
         "OrderDate": this.orderDate.date,
-        "RequiredDate": this.RequiredDate.date,
+        "RequiredDate": this.required.date,
         "ShipVia": this.selectedShipper.ShipperID,
-        "Freight": this.freight,
+        "Freight": this.freight.cost,
         "ShipName": this.customer.CompanyName,
         "ShipAddress": this.customer.Address,
         "ShipCity": this.customer.City,
@@ -198,9 +201,6 @@ export default {
         .catch((error) => {
           console.error(error)
         })
-      //AXIOS POST REQUEST NEEDS TO HAPPEN HERE
-      // psuedo-code:
-      // axiost.post(new order (products, customer, selectedEmployee, shipper))
 
       this.cancel();
     },
@@ -215,7 +215,6 @@ export default {
     deleteRow: function(payload) {
       this.products.splice(payload.data.vueTableComponentInternalRowId, 1);
     },
-
     clearProductList: function() {
       this.products = [];
     }
