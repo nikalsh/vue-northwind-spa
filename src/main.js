@@ -13,14 +13,11 @@ import VueRouter from 'vue-router'
 import { TableComponent, TableColumn } from 'vue-table-component';
 import vueButtonEffect from 'vue-button-effect'
 import Customers from '@/components/Customers'
-import NavBar from '@/components/NavBar'
 import Products from '@/components/Products'
 import Shippers from '@/components/Shippers'
-import PageThree from '@/components/PageThree'
-import PageFour from '@/components/PageFour'
-import PageFiveViews from '@/components/PageFiveViews'
-import About from '@/components/About'
-
+import Employees from '@/components/Employees'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
 Vue.component('table-component', TableComponent);
 Vue.component('table-column', TableColumn);
 
@@ -29,21 +26,17 @@ Vue.filter('toUSD', function (value) {
   return `$${value}`;
 });
 
+Vue.use(Vuetify)
 Vue.use(vueButtonEffect)
 
 Vue.use(VueRouter)
 
 const routes = [
   // define the root url of the application.
-  { path: '/', component: Customers },
   { path: '/Customers', component: Customers },
-  { path: '/NavBar', component: NavBar },
   { path: '/Products', component: Products },
   { path: '/Shippers', component: Shippers },
-  { path: '/PageThree', component: PageThree },
-  { path: '/PageFour', component: PageFour },
-  { path: '/PageFiveViews', component: PageFiveViews },
-  { path: '/About', component: About }
+  { path: '/Employees', component: Employees },
 ]
 
 const router = new VueRouter({

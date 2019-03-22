@@ -16,8 +16,9 @@
               <v-expansion-panel>
                 <Employees></Employees>
                 <Customers></Customers>
-                <v-menu ma-4 v-model="timeMenu" :close-on-content-click="false" :nudge-right="40" lazy transition="scale-transition" offset-y full-width min-width="290px">
-                  <template  v-slot:activator="{ on }">
+                <v-menu ma-4 v-model="timeMenu" :close-on-content-click="false" :nudge-right="40" lazy
+                        transition="scale-transition" offset-y full-width min-width="290px">
+                  <template v-slot:activator="{ on }">
                     <v-text-field
                       class="px-4"
                       v-model="requiredDate"
@@ -33,7 +34,7 @@
                 <v-text-field
                   class="px-4"
                   v-model="freight"
-                  abel="Freight cost"
+                  label="Freight cost"
                   prepend-icon="train"
                   required></v-text-field>
                 <Products></Products>
@@ -45,16 +46,17 @@
 
               </v-flex>
               <div pa-2 xs4 offset-xs2>
-                <v-btn color="success" v-on:click="save">Save Order</v-btn>
-                <v-btn color="error" v-on:click="cancel">Cancel Order</v-btn>
+                <v-btn color="success" v-on:click="save">Send Order</v-btn>
+                <v-btn color="error" @click="clear" v-on:click="cancel">Cancel Order</v-btn>
               </div>
             </v-tab-item>
             <v-tab ripple="">
               History
             </v-tab>
-            <v-tab-item></v-tab-item>
+            <v-tab-item>
+              <OrderHistory></OrderHistory>
+            </v-tab-item>
           </v-tabs>
-
 
 
         </v-container>
@@ -71,7 +73,7 @@
   import Employees from './Employees';
   import Shippers from './Shippers';
   import Products from './Products';
-
+  import OrderHistory from './OrderHistory';
   export default {
     name: "OrderForm",
 
@@ -83,21 +85,21 @@
         freight: '',
         requiredDate: "",
         orderDate: "",
-        timeMenu:false,
-        orderDetails:[]
+        timeMenu: false,
+        orderDetails: []
       };
     },
     async created() {
       //eventListeners
       this.$bus.$on("product-payload", payload => {
-        this.orderDetails=payload;
-
-      }),this.$bus.$on("employee-payload", payload => {
-        this.employeeID=payload.EmployeeID;
-      }),
+        this.orderDetails = payload;
+      });
+        this.$bus.$on("employee-payload", payload => {
+          this.employeeID = payload.EmployeeID;
+        });
         this.$bus.$on("customer-payload", payload => {
           this.customer = payload;
-        }),
+        });
         this.$bus.$on("shipper-payload", payload => {
           this.shipper = payload;
         });
@@ -143,15 +145,13 @@
       },
 
       cancel: function (event) {
+        this.employeeID= "";
+          this.freight='';
+          this.orderDetails=[""];
         this.customer = "";
         this.shipper = "";
         this.requiredDate = "";
-
-        this.clearProductList();
-      },
-
-      clearProductList: function () {
-        this.products = [];
+        this.$bus.$emit("clear");
       },
       getCurrentDate: function () {
         this.orderDate = new Date();
@@ -160,16 +160,17 @@
     },
     computed: {
       getTotalCost: function () {
-        return this.orderDetails.reduce((a,b)=>a+b.UnitPrice*b.Quantity,0);
+        return parseInt(this.freight)+parseInt(this.orderDetails.reduce((a, b) => a + b.UnitPrice * b.Quantity, 0));
       }
 
     },
     components: {
       Datepicker,
-      Employees:Employees,
-      Customers:Customers,
-      Shippers:Shippers,
-      Products:Products
+      Employees: Employees,
+      Customers: Customers,
+      Shippers: Shippers,
+      Products: Products,
+  OrderHistory:OrderHistory
     }
   };
 </script>

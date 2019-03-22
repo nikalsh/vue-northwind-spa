@@ -1,16 +1,25 @@
 <template>
+  <v-app>
   <div id="app">
-    <NavBar></NavBar>
-    <router-view></router-view>
+    <div class="sliding-background"></div>
+
+    <div id="what">
+
+      <div id = "title">NORTHWIND</div>
+
+    </div>
+    <OrderForm></OrderForm>
+
   </div>
+  </v-app>
 </template>
 
 <script>
-import NavBar from "./components/NavBar";
+  import OrderForm from "./components/OrderForm";
 export default {
   name: "app",
   components: {
-    NavBar: NavBar
+    OrderForm: OrderForm
   }
 };
 </script>
@@ -153,6 +162,38 @@ body {
   cursor: pointer;
 
 }
+#title{
+  color: white;
+  text-shadow: 0px 0px 150px blue;
+  font-size: 90px;
+  font-weight: bold;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  /* border: 1px solid black; */
+  top: -17px;
+  left: 0;
+  /* opacity: 0.0; */
 
+}
+
+.sliding-background {
+  margin: 0;
+  padding: 0;
+  background: url("./assets/logo.png") repeat-x;
+  height: 173px;
+  width: 3000px;
+  animation: slide 7s linear infinite;
+  z-index: -100;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-200px, 0, 0);
+  }
+}
 
 </style>

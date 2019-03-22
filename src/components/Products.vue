@@ -90,6 +90,9 @@
     },
 
     async created() {
+      this.$bus.$on("clear", x => {
+        this.products.map(e=> e.Quantity=0);
+      });
 
       axios
         .get("api/products", { params: { table: "Products" } })
@@ -106,9 +109,7 @@
           var payload= this.products.filter(e=> e.Quantity>0).map(p=>{
             console.log(p);
             return {"ProductID": p.ProductID, "UnitPrice": p.UnitPrice, "Quantity": p.Quantity, "Discount": p.Discount}
-
           });
-
           console.log(payload);
           this.$bus.$emit("product-payload", payload);
         }

@@ -1,13 +1,6 @@
 <template>
-  <v-expansion-panel-content v-model="show">
-    <template v-slot:header>
-      <v-text-field
-        prepend-icon="account_circle"
-        class="disable-events px-0.8"
-        v-model='shipperName'
-        label="Shipper"
-      ></v-text-field>
-    </template>
+
+
 
 
     <v-container>
@@ -43,7 +36,6 @@
         </v-data-table>
       </v-card>
     </v-container>
-  </v-expansion-panel-content>
 </template>
 
 <script>
@@ -55,25 +47,16 @@
       return{
         search: '',
         show: false,
-        headers: [
-          {text: 'Shipper ID', value: 'ShipperID'},
-          {text: 'Company Name', value: 'CompanyName'},
-          {text:'Phone',value:'Phone'}
-        ],
-        shippers: [],
-        shipperName: ''
+        Orders:''
       }
     },
 
     async created() {
-      this.$bus.$on("clear", x => {
-        this.shipperName='';
-      });
-      axios
-        .get("api/shippers", {params: {table: "Shippers"}})
-        .then(response => {
 
-          this.shippers = response.data;
+      axios
+        .get("api/orders", {params: {table: "Orders"}})
+        .then(response => {
+          this.orders = response.data;
           console.log(this.employees);
         })
         .catch(e => {
@@ -81,11 +64,6 @@
         })},
     methods: {
 
-      rowClick(payload){
-        this.show=false;
-        this.shipperName=payload.CompanyName;
-        this.$bus.$emit("shipper-payload", payload);
-      }
     }
   }
 </script>
