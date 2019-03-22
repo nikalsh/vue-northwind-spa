@@ -47,7 +47,32 @@
       return{
         search: '',
         show: false,
-        Orders:''
+        Orders:[]
+        CustomerID: 'ALFKI',
+        OrderID: 11212,
+        EmployeeID: 3,
+        OrderDate: 2019-03-19T21:58:01.000Z,
+        RequiredDate: 2019-03-18T21:58:00.000Z,
+        ShippedDate: null,
+        ShipVia: 3,
+        Freight: '250.0000',
+        ShipName: 'Alfreds Futterkiste',
+        ShipAddress: 'Obere Str. 57',
+        ShipCity: 'Berlin',
+        ShipRegion: 'null',
+        ShipPostalCode: '12209',
+        ShipCountry: 'Germany',
+        CompanyName: 'Alfreds Futterkiste',
+        ContactName: 'Maria Anders',
+        ContactTitle: 'Sales Representative',
+        Address: 'Obere Str. 57',
+        City: 'Berlin',
+        Region: null,
+        PostalCode: '12209',
+        Country: 'Germany',
+        Phone: '030-0074321',
+        Fax: '030-0076545' },
+
       }
     },
 
