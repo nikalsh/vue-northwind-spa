@@ -1,29 +1,95 @@
 <template>
-  <div id="shippers">
-    <ListShippers></ListShippers>
-  </div>
+  <v-expansion-panel-content v-model="show">
+    <template v-slot:header>
+      <v-text-field
+        prepend-icon="account_circle"
+        class="disable-events px-0.8"
+        v-model='shipperName'
+        label="Shipper"
+      ></v-text-field>
+    </template>
+
+
+    <v-container>
+      <v-card>
+        <v-card-title>
+          <v-text-field
+            v-model="search"
+            append-icon="search"
+            label="Search"
+            single-line
+            hide-details
+          ></v-text-field>
+        </v-card-title>
+        <v-data-table
+          :headers="headers"
+          :items="shippers"
+          :search="search"
+          class="elevation-1"
+          :rows-per-page-items='[{"text":"$vuetify.dataIterator.rowsPerPageAll", "value":-1}]'
+          hide-actions
+        >
+
+          <template v-slot:items="props">
+            <tr @click="rowClick(props.item)">
+              <td>{{props.item.ShipperID}}</td>
+              <td>{{props.item.CompanyName}}</td>
+              <td>{{props.item.Phone}}</td>
+            </tr>
+          </template>
+          <v-alert v-slot:no-results :value="true" color="error" icon="warning">
+            Your search for "{{ search }}" found no results.
+          </v-alert>
+        </v-data-table>
+      </v-card>
+    </v-container>
+  </v-expansion-panel-content>
 </template>
 
 <script>
-  import ListShippers from "./ListShippers";
+  import axios from "axios";
+  import OrderForm from './OrderForm';
   export default {
-    name: 'Shippers',
-    components: {
-      ListShippers: ListShippers,
+    name: "Shippers",
+    data(){
+      return{
+        search: '',
+        show: false,
+        headers: [
+          {text: 'Shipper ID', value: 'ShipperID'},
+          {text: 'Company Name', value: 'CompanyName'},
+          {text:'Phone',value:'Phone'}
+        ],
+        shippers: [],
+        shipperName: ''
+      }
+    },
+
+    async created() {
+
+      axios
+        .get("api/shippers", {params: {table: "Shippers"}})
+        .then(response => {
+
+          this.shippers = response.data;
+          console.log(this.employees);
+        })
+        .catch(e => {
+          this.errors.push(e);
+        })},
+    methods: {
+
+      rowClick(payload){
+        this.show=false;
+        this.shipperName=payload.CompanyName;
+        this.$bus.$emit("shipper-payload", payload);
+      }
     }
-
   }
-
 </script>
-<!-- styling for the component -->
-<style>
-#shippers {
-  
-}
-</style>
 
-<!--Applikationen  skall göras som en SPA applikation där endast data hämtas från backend( databasen)-->
-<!--Föreställ er att ni är ordermottagare på Deligrossisten 'Northwind enterprises' och kunder ringer till företaget och beställer varor från er. Kunderna är detaljister dvs mindre affärer som också säljer deliprodukter.-->
-<!--Ni skall alltså hantera hela beställningsprocessen i applikationen där slutprodukten är en komplett beställning-->
-<!--Ni kommer att få en scriptfil som genererar databasen och dess tabeller till er lokala sql server.-->
-<!--Ni kan redan nu studera databasens schema här-->
+<style scoped>
+  .disable-events {
+    pointer-events: none
+  }
+</style>
